@@ -17,4 +17,16 @@ didSet {
  scrollView.contentSize = view.frame.size (view is whatever your view is on the view contrller, it could be and imageView or whatever you want)
 }
 
+#Add Zooming
+In didSet scrollView Property add:
+scrollView.delegate = self
+scrollView.minimumZoomScale = 0.03
+scrollView.maximumZoomScale = 1.0
 
+#implement UIScrollView Delegate Method
+viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView {
+ return imageView	
+}
+
+#Add UIScrollViewDelegate to our class
+UIScrollViewDelegate 
