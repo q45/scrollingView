@@ -10,26 +10,55 @@ import UIKit
 
 class ImageViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    var imageURL: NSURL? {
+        didSet {
+            image = nil
+            if view.window != nil {
+                fetchImage()
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func fetchImage() {
+        if let url = imageURL {
+            let imageData = NSData(contentsOfURL: url)
+            if imageData != nil {
+                image = UIImage(data: imageData!)
+            } else {
+                image = nil
+            }
+        }
     }
-    */
-
+    
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.contentSize = imageView.frame.size
+        }
+    }
+    
+    
+    private var imageView = UIImageView()
+    
+    private var image: UIImage? {
+        get { return imageView.image }
+        set {
+            imageView.image = newValue
+            imageView.sizeToFit()
+            scrollView?.contentSize = imageView.frame.size
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        scrollView.addSubview(imageView)
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if image == nil {
+            fetchImage()
+        }
+    }
+   
 }

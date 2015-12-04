@@ -12,6 +12,8 @@
 		10E4B3DD1C11F7F700C8CC82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E4B3DB1C11F7F700C8CC82 /* Main.storyboard */; };
 		10E4B3DF1C11F7F700C8CC82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10E4B3DE1C11F7F700C8CC82 /* Assets.xcassets */; };
 		10E4B3E21C11F7F700C8CC82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E4B3E01C11F7F700C8CC82 /* LaunchScreen.storyboard */; };
+		10E4B3EA1C11F85B00C8CC82 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E4B3E91C11F85B00C8CC82 /* ImageViewController.swift */; };
+		10E4B3EC1C11FBF300C8CC82 /* DemoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E4B3EB1C11FBF300C8CC82 /* DemoURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		10E4B3DE1C11F7F700C8CC82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10E4B3E11C11F7F700C8CC82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10E4B3E31C11F7F700C8CC82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10E4B3E91C11F85B00C8CC82 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		10E4B3EB1C11FBF300C8CC82 /* DemoURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				10E4B3D71C11F7F700C8CC82 /* AppDelegate.swift */,
 				10E4B3D91C11F7F700C8CC82 /* ViewController.swift */,
 				10E4B3DB1C11F7F700C8CC82 /* Main.storyboard */,
+				10E4B3E91C11F85B00C8CC82 /* ImageViewController.swift */,
+				10E4B3EB1C11FBF300C8CC82 /* DemoURL.swift */,
 				10E4B3DE1C11F7F700C8CC82 /* Assets.xcassets */,
 				10E4B3E01C11F7F700C8CC82 /* LaunchScreen.storyboard */,
 				10E4B3E31C11F7F700C8CC82 /* Info.plist */,
@@ -96,6 +102,7 @@
 				TargetAttributes = {
 					10E4B3D31C11F7F600C8CC82 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 353TEE2YUV;
 					};
 				};
 			};
@@ -135,7 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10E4B3EC1C11FBF300C8CC82 /* DemoURL.swift in Sources */,
 				10E4B3DA1C11F7F700C8CC82 /* ViewController.swift in Sources */,
+				10E4B3EA1C11F85B00C8CC82 /* ImageViewController.swift in Sources */,
 				10E4B3D81C11F7F700C8CC82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,10 +258,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = cassini/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wasatchcode.cassini;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -260,10 +272,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = cassini/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wasatchcode.cassini;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
